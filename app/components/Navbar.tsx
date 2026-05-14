@@ -147,10 +147,13 @@ export default function Navbar() {
                 {/* Desktop Nav Links */}
                 <nav className="hidden lg:flex items-center xl:gap-8 lg:gap-6 text-[#1a1a1a] text-[14.5px] ml-auto mr-16 font-[500]">
                     {/* Features */}
-                    <div className="relative" ref={featuresRef}>
+                    <div 
+                        className="relative py-6 cursor-pointer" 
+                        ref={featuresRef}
+                    >
                         <button
                             onClick={() => setActiveDropdown(activeDropdown === 'features' ? null : 'features')}
-                            className={`flex items-center gap-1 transition-colors leading-normal group cursor-pointer ${activeDropdown === 'features' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
+                            className={`flex items-center gap-1 transition-colors leading-normal cursor-pointer ${activeDropdown === 'features' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
                         >
                             Features
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'features' ? 'rotate-180' : ''}`} />
@@ -158,7 +161,7 @@ export default function Navbar() {
 
                         {activeDropdown === 'features' && (
                             <div
-                                className="absolute top-[calc(100%+20px)] left-[-190px] w-[560px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300"
+                                className="absolute top-[100%] left-[-190px] w-[560px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
                             >
                                 <div className="px-6 py-5">
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">
@@ -174,7 +177,7 @@ export default function Navbar() {
                                                 onClick={() => setActiveDropdown(null)}
                                             >
                                                 <div className="mt-0.5 shrink-0">
-                                                    {React.cloneElement(feature.icon as React.ReactElement, { className: "w-4.5 h-4.5 text-[#2764a8]" })}
+                                                    {feature.icon}
                                                 </div>
                                                 <div className="flex flex-col">
                                                     <h4 className="text-[12.5px] font-medium text-[#1a1a1a] group-hover/item:text-[#2764a8] transition-colors leading-tight">
@@ -199,7 +202,7 @@ export default function Navbar() {
                                             <p className="text-[10.5px] text-gray-400 font-normal leading-tight mt-1 max-w-[280px]">
                                                 Partner with us for seamless shipping solutions and faster deliveries.
                                             </p>
-                                            <Link href="#" className="mt-3 w-fit border border-gray-200 px-4 py-1.5 rounded-lg text-[11px] font-medium text-gray-800 hover:bg-gray-50 transition-all shadow-sm">
+                                            <Link href="#" className="mt-3 w-fit border border-gray-200 px-4 py-1.5 rounded-lg text-[11px] font-medium text-gray-800 hover:bg-gray-50 transition-all shadow-sm" onClick={() => setActiveDropdown(null)}>
                                                 Contact Us
                                             </Link>
                                         </div>
@@ -214,17 +217,20 @@ export default function Navbar() {
                     </Link>
 
                     {/* Knowledge Hub */}
-                    <div className="relative" ref={hubRef}>
-                        <div
+                    <div 
+                        className="relative py-6 cursor-pointer"
+                        ref={hubRef}
+                    >
+                        <button
                             onClick={() => setActiveDropdown(activeDropdown === 'hub' ? null : 'hub')}
-                            className={`flex items-center gap-1 transition-colors leading-normal group cursor-pointer ${activeDropdown === 'hub' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
+                            className={`flex items-center gap-1 transition-colors leading-normal cursor-pointer ${activeDropdown === 'hub' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
                         >
                             Knowledge Hub
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'hub' ? 'rotate-180' : ''}`} />
-                        </div>
+                        </button>
                         {activeDropdown === 'hub' && (
                             <div 
-                                className="absolute top-[calc(100%+20px)] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300"
+                                className="absolute top-[100%] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
                             >
                                 <div className="px-6 py-5">
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">
@@ -241,12 +247,12 @@ export default function Navbar() {
                                                 <p className="text-[10.5px] text-gray-400 mt-1 font-normal leading-tight">Read the latest news, guides and industry updates.</p>
                                             </div>
                                         </Link>
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item">
+                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <ShieldCheck className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
                                             <div className="flex flex-col">
-                                                <h4 className="text-[12.5px] font-medium text-gray-900 group-hover/item:text-[#2764a8] transition-colors leading-tight">FAQ's</h4>
+                                                <h4 className="text-[12.5px] font-medium text-gray-900 group-hover/item:text-[#2764a8] transition-colors leading-tight">FAQ&apos;s</h4>
                                                 <p className="text-[10.5px] text-gray-400 mt-1 font-normal leading-tight">Find answers to common questions about our platform.</p>
                                             </div>
                                         </Link>
@@ -269,17 +275,20 @@ export default function Navbar() {
                     </div>
 
                     {/* Organization */}
-                    <div className="relative" ref={orgRef}>
-                        <div
+                    <div 
+                        className="relative py-6 cursor-pointer"
+                        ref={orgRef}
+                    >
+                        <button
                             onClick={() => setActiveDropdown(activeDropdown === 'org' ? null : 'org')}
-                            className={`flex items-center gap-1 transition-colors leading-normal group cursor-pointer ${activeDropdown === 'org' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
+                            className={`flex items-center gap-1 transition-colors leading-normal cursor-pointer ${activeDropdown === 'org' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
                         >
                             Organization
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'org' ? 'rotate-180' : ''}`} />
-                        </div>
+                        </button>
                         {activeDropdown === 'org' && (
                             <div 
-                                className="absolute top-[calc(100%+20px)] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300"
+                                className="absolute top-[100%] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
                             >
                                 <div className="px-6 py-5">
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">
@@ -287,7 +296,7 @@ export default function Navbar() {
                                     </p>
                                     
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-1.5">
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item">
+                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <Users className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -297,17 +306,17 @@ export default function Navbar() {
                                             </div>
                                         </Link>
 
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item">
+                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <Phone className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
                                             <div className="flex flex-col">
                                                 <h4 className="text-[12.5px] font-medium text-gray-900 group-hover/item:text-[#2764a8] transition-colors leading-tight">Contact Us</h4>
-                                                <p className="text-[10.5px] text-gray-400 mt-1 font-normal leading-tight">Have a question? We'd love to hear...</p>
+                                                <p className="text-[10.5px] text-gray-400 mt-1 font-normal leading-tight">Have a question? We&apos;d love to hear...</p>
                                             </div>
                                         </Link>
 
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item">
+                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <ShieldCheck className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -317,12 +326,12 @@ export default function Navbar() {
                                             </div>
                                         </Link>
 
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item">
+                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <FileText className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
                                             <div className="flex flex-col">
-                                                <h4 className="text-[12.5px] font-medium text-gray-900 group-hover/item:text-[#2764a8] transition-colors leading-tight">Terms & Conditions</h4>
+                                                <h4 className="text-[12.5px] font-medium text-gray-900 group-hover/item:text-[#2764a8] transition-colors leading-tight">Terms &amp; Conditions</h4>
                                                 <p className="text-[10.5px] text-gray-400 mt-1 font-normal leading-tight">Read our terms and conditions.</p>
                                             </div>
                                         </Link>
@@ -421,7 +430,7 @@ export default function Navbar() {
                                             }}
                                         >
                                             <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
-                                                {React.cloneElement(feature.icon as React.ReactElement, { className: "w-5 h-5 text-[#2764a8]" })}
+                                                {feature.icon}
                                             </div>
                                             <div>
                                                 <h4 className="text-[13.5px] font-bold text-gray-900 leading-tight">{feature.title}</h4>
