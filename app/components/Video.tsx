@@ -39,7 +39,7 @@ const Video = () => {
                 <div className="flex-1 w-full relative">
                     {/* Watch video - Positioned absolutely to match the background image */}
                     <div className="absolute top-[48%] -translate-y-[50%] left-[4%] md:left-[43%] flex items-center gap-3 cursor-pointer group hover:scale-105 transition-transform pb-2 lg:pb-3 drop-shadow-lg z-20">
-                        <div className="w-[50px] h-[50px] rounded-full border-[3px] border-white flex items-center justify-center bg-black/20 backdrop-blur-sm">
+                        <div className="w-[50px] h-[50px] rounded-full border-[3px] border-white flex items-center justify-center bg-black/40">
                             <svg className="w-[20px] h-[20px] text-white ml-1" fill="currentColor" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z" />
                             </svg>

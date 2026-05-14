@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Hexagon, Sparkles, Orbit } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { gsap } from "gsap";
 
 export interface PremiumCard {
@@ -42,45 +42,67 @@ const PremiumCarousel: React.FC<PremiumCarouselProps> = ({ cards, header }) => {
     animateTransition(nextIndex, -1);
   };
 
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [transitionDirection, setTransitionDirection] = useState(0);
+
   const animateTransition = (nextIndex: number, direction: number) => {
-    if (!cardsRef.current) return;
+    if (nextIndex === activeIndex) return;
+    
+    const oldGroup = groupRefs.current[activeIndex];
+    const newGroup = groupRefs.current[nextIndex];
+    if (!oldGroup || !newGroup) {
+      setActiveIndex(nextIndex);
+      return;
+    }
 
-    const cards_to_hide = Array.from(cardsRef.current.children);
-
-    gsap.to(cards_to_hide, {
-      x: -direction * 100,
+    // Set new group to starting position
+    gsap.set(newGroup, { 
+      display: 'grid',
+      x: direction * 50, 
       opacity: 0,
-      scale: 0.9,
-      duration: 0.4,
-      stagger: 0.05,
-      ease: "power2.inOut",
+      zIndex: 20 
+    });
+    
+    gsap.set(oldGroup, { zIndex: 10 });
+
+    const tl = gsap.timeline({
       onComplete: () => {
         setActiveIndex(nextIndex);
-        gsap.fromTo(cardsRef.current?.children ?? [], {
-          x: direction * 100,
-          opacity: 0,
-          scale: 0.9
-        }, {
-          x: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: "expo.out"
-        });
+        gsap.set(oldGroup, { display: 'none' });
       }
     });
+
+    tl.to(Array.from(oldGroup.children), {
+      x: -direction * 50,
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.4,
+      stagger: 0.02,
+      ease: "power2.inOut"
+    })
+    .to(Array.from(newGroup.children), {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 0.5,
+      stagger: 0.03,
+      ease: "power3.out"
+    }, "-=0.3"); // Overlap the animations
   };
+
+  const groupRefs = React.useRef<(HTMLDivElement | null)[]>([]);
 
   return (
     <div
       ref={containerRef}
       className="relative w-full min-h-[70vh] md:min-h-screen flex flex-col items-center justify-center py-10 md:py-20 px-2 md:px-4 select-none"
     >
-      {/* Premium Glass Background Blobs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-gradient-to-br from-[#184FA2]/10 to-transparent rounded-full blur-[120px] animate-pulse pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[700px] h-[700px] bg-gradient-to-tl from-[#27AAE2]/10 to-transparent rounded-full blur-[140px] animate-pulse pointer-events-none" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#184FA2 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      {/* Optimized Background Blobs (No filters) */}
+      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] pointer-events-none opacity-40" 
+           style={{ background: 'radial-gradient(circle, rgba(24,79,162,0.15) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[700px] h-[700px] pointer-events-none opacity-40" 
+           style={{ background: 'radial-gradient(circle, rgba(39,170,226,0.15) 0%, transparent 70%)' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#184FA2 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       {/* Navigation Sticks - Section Edges */}
       <div className="absolute left-2 md:left-4 top-0 bottom-0 w-[40px] md:w-[6vw] flex items-center justify-center z-50">
@@ -109,8 +131,9 @@ const PremiumCarousel: React.FC<PremiumCarouselProps> = ({ cards, header }) => {
         </button>
       </div>
 
-      {/* EXTREME Glamorphic Container - Maximum premium frosted glass effect */}
-      <div className="relative w-[95%] sm:w-[90%] md:w-[85%] max-w-[1500px] flex flex-col items-center justify-center p-6 sm:p-10 md:p-12 lg:p-16 bg-white/[0.03] backdrop-blur-[160px] rounded-[30px] md:rounded-[50px] lg:rounded-[70px] shadow-[0_50px_100px_-25px_rgba(0,0,0,0.15),inset_0_0_120px_rgba(255,255,255,0.2),inset_0_0_2px_rgba(255,255,255,0.9)] ring-1 ring-white/20">
+      {/* Optimized Container */}
+      <div className="relative w-[95%] sm:w-[90%] md:w-[85%] max-w-[1500px] flex flex-col items-center justify-center p-6 sm:p-10 md:p-12 lg:p-16 bg-[#fbfdff] rounded-[30px] md:rounded-[50px] lg:rounded-[70px] shadow-[0_20px_40px_rgba(0,0,0,0.05)] border border-gray-100"
+           style={{ transformStyle: 'preserve-3d' }}>
 
         {/* Extreme Bevel & Specular Highlights */}
         <div className="absolute inset-0 pointer-events-none">
@@ -126,11 +149,12 @@ const PremiumCarousel: React.FC<PremiumCarouselProps> = ({ cards, header }) => {
           <div className="absolute -top-[50%] -left-[50%] w-[150%] h-[150%] bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.1)_0%,transparent_50%)] pointer-events-none" />
 
           {/* Texture: Ultra-Fine Noise for Glass Detail */}
-          <div className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay" style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }} />
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }} />
         </div>
 
-        {/* High-Contrast Atmosphere Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-gradient-radial from-[#27AAE2]/10 to-transparent pointer-events-none opacity-50 blur-[130px] z-0" />
+        {/* Atmosphere Glow (Gradient-based) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] pointer-events-none opacity-20 z-0" 
+             style={{ background: 'radial-gradient(circle, rgba(39,170,226,0.1) 0%, transparent 70%)' }} />
 
         <div className="w-full text-center mb-6 md:mb-12 relative z-10">
           {header}
@@ -141,7 +165,7 @@ const PremiumCarousel: React.FC<PremiumCarouselProps> = ({ cards, header }) => {
           className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-2 md:px-4 items-center relative z-10"
         >
           {cardGroups[activeIndex].map((card, idx) => (
-            <GlassCard key={activeIndex * 3 + idx} card={card} index={idx} />
+            <GlassCard key={`${activeIndex}-${idx}`} card={card} />
           ))}
         </div>
 
@@ -160,7 +184,7 @@ const PremiumCarousel: React.FC<PremiumCarouselProps> = ({ cards, header }) => {
   );
 };
 
-const GlassCard = ({ card, index }: { card: PremiumCard; index: number }) => {
+const GlassCard = ({ card }: { card: PremiumCard }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -169,15 +193,22 @@ const GlassCard = ({ card, index }: { card: PremiumCard; index: number }) => {
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div
-        className={`relative w-full h-full transition-all duration-1000 [transform-style:preserve-3d] shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:shadow-[0_45px_100px_rgba(0,0,0,0.15)] rounded-[24px] md:rounded-[36px] lg:rounded-[45px] ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}
+        className="relative w-full h-full transition-all duration-1000 shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:shadow-[0_45px_100px_rgba(0,0,0,0.15)] rounded-[24px] md:rounded-[36px] lg:rounded-[45px]"
+        style={{ 
+          transformStyle: 'preserve-3d',
+          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+        }}
       >
-        {/* Front Face */}
-        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] bg-white/60 backdrop-blur-[40px] border-2 border-white/50 rounded-[24px] md:rounded-[36px] lg:rounded-[45px] p-8 md:p-10 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden transition-all duration-700 hover:bg-white/80">
+        <div 
+          className="absolute inset-0 w-full h-full bg-white border border-gray-200 rounded-[24px] md:rounded-[36px] lg:rounded-[45px] p-8 md:p-10 flex flex-col justify-between shadow-md overflow-hidden transition-all duration-700 hover:shadow-xl will-change-transform"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
           {/* Shine overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
 
-          {/* Card Glow */}
-          <div className="absolute top-[-30%] left-[-30%] w-[160%] h-[160%] bg-[#184FA2]/5 group-hover:bg-[#184FA2]/10 blur-[100px] rounded-full transition-all duration-1000" />
+          {/* Card Glow (Gradient-based) */}
+          <div className="absolute top-[-30%] left-[-30%] w-[160%] h-[160%] pointer-events-none opacity-10" 
+               style={{ background: 'radial-gradient(circle, rgba(24,79,162,0.1) 0%, transparent 70%)' }} />
 
           {/* Badge */}
           <div className="relative z-10 flex justify-center">
@@ -187,9 +218,9 @@ const GlassCard = ({ card, index }: { card: PremiumCard; index: number }) => {
             </span>
           </div>
 
-          {/* Image Container */}
           <div className="relative w-full h-[140px] md:h-[160px] lg:h-[200px] flex items-center justify-center p-2">
-            <div className="absolute w-[140px] h-[140px] md:w-[170px] md:h-[170px] lg:w-[220px] lg:h-[220px] rounded-full bg-gradient-to-tr from-[#184FA2]/20 to-[#27AAE2]/10 blur-[30px] md:blur-[40px] group-hover:scale-125 transition-transform duration-1000" />
+            <div className="absolute w-[140px] h-[140px] md:w-[170px] md:h-[170px] lg:w-[220px] lg:h-[220px] pointer-events-none opacity-20" 
+                 style={{ background: 'radial-gradient(circle, rgba(39,170,226,0.2) 0%, transparent 70%)' }} />
             <Image
               src={card.image}
               alt={card.title}
@@ -220,7 +251,13 @@ const GlassCard = ({ card, index }: { card: PremiumCard; index: number }) => {
         </div>
 
         {/* Back Face */}
-        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-[#E1F5FE] to-[#B3E5FC] border border-white/50 rounded-[24px] md:rounded-[36px] lg:rounded-[45px] p-8 md:p-10 flex flex-col justify-between shadow-2xl overflow-hidden ring-1 ring-white/30 transition-all duration-700">
+        <div 
+          className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#E1F5FE] to-[#B3E5FC] border border-white/50 rounded-[24px] md:rounded-[36px] lg:rounded-[45px] p-8 md:p-10 flex flex-col justify-between shadow-2xl overflow-hidden ring-1 ring-white/30 transition-all duration-700"
+          style={{ 
+            backfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)'
+          }}
+        >
           {/* Decorative Back Glow */}
           <div className="absolute top-[-20%] right-[-20%] w-[150%] h-[150%] bg-white/20 blur-[80px] rounded-full pointer-events-none" />
 

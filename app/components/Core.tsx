@@ -38,7 +38,7 @@ const services = [
     {
         title: "Bulk Operations",
         subtitle: "Bulk upload functionality for faster processing. Handle thousands of invoices simultaneously with our high-speed engine.",
-        description: "Scalability at your fingertips. Process thousands of E-way bills in seconds using our robust bulk upload engine. Whether it's 10 or 10,000 invoices, our high-speed processing unit validates data instantly and manages error handling gracefully, allowing your team to focus on exception management rather than manual data entry.",
+        description: "Scalability at your fingertips. Process thousands of E-way bills in seconds using our robust bulk upload engine. Whether it&apos;s 10 or 10,000 invoices, our high-speed processing unit validates data instantly and manages error handling gracefully, allowing your team to focus on exception management rather than manual data entry.",
         image: "/bulk_operation.png",
         color: "#184FA2",
         badge: "High Speed"
@@ -62,7 +62,7 @@ const services = [
     {
         title: "Admin Control",
         subtitle: "Centralized control to manage and register users. Advanced reporting and audit logs for comprehensive governance.",
-        description: "Master your ecosystem with centralized governance. Admins get a bird's-eye view of all system activities, from user registrations to system-wide settings. Generate comprehensive audit logs for compliance reviews and manage multiple branches or entities from a single, unified dashboard designed for large-scale enterprise needs.",
+        description: "Master your ecosystem with centralized governance. Admins get a bird&apos;s-eye view of all system activities, from user registrations to system-wide settings. Generate comprehensive audit logs for compliance reviews and manage multiple branches or entities from a single, unified dashboard designed for large-scale enterprise needs.",
         image: "/admin_control.png",
         color: "#27AAE2",
         badge: "Full Control"
@@ -93,11 +93,12 @@ const Core = () => {
             id="capabilities"
             className="relative w-full bg-[#fbfdff] overflow-hidden select-none py-4 md:py-8 lg:py-10"
         >
-            {/* Animated Mesh Background Elements for Glassmorphism */}
+            {/* Highly Optimized Background Gradients (No expensive blur filters) */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-[-15%] right-[-5%] w-[600px] h-[600px] bg-[#27AAE2]/15 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
-                <div className="absolute bottom-[-10%] left-[-5%] w-[700px] h-[700px] bg-[#184FA2]/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s', animationDelay: '2s' }} />
-                <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-[#27AAE2]/5 rounded-full blur-[80px]" />
+                <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] opacity-20 pointer-events-none" 
+                     style={{ background: 'radial-gradient(circle, rgba(39,170,226,0.3) 0%, transparent 70%)' }} />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[900px] h-[900px] opacity-15 pointer-events-none" 
+                     style={{ background: 'radial-gradient(circle, rgba(24,79,162,0.3) 0%, transparent 70%)' }} />
             </div>
 
             <PremiumCarousel

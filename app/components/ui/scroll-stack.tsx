@@ -23,7 +23,6 @@ interface ScrollStackProps {
   backgroundColor?: string;
   cardHeight?: string;
   animationDuration?: string;
-  sectionHeightMultiplier?: number;
   className?: string;
   header?: React.ReactNode;
 }
@@ -32,7 +31,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   cards,
   backgroundColor = "bg-white",
   cardHeight = "500px", 
-  sectionHeightMultiplier = 1,
   className = "",
   header,
 }) => {
@@ -54,6 +52,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
           pin: true,
           scrub: 1, 
         },
+        force3D: true,
       });
 
       // Animate cards
@@ -65,6 +64,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                opacity: 0,
                duration: 1,
                ease: "power2.inOut",
+               force3D: true,
            }, 0.5); 
            return;
         }
@@ -74,6 +74,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
           opacity: 0,
           scale: 0.95,
           zIndex: 10 + index,
+          force3D: true,
         });
 
         tl.to(cardRefs.current[index], {
@@ -82,6 +83,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
           scale: 1,
           duration: 1,
           ease: "power2.out",
+          force3D: true,
         }, index - 0.5);
 
         if (index < cards.length - 1) {
@@ -91,13 +93,14 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                 opacity: 0,
                 duration: 1,
                 ease: "power2.inOut",
+                force3D: true,
             }, index + 0.5);
         }
       });
     });
 
     return () => ctx.revert();
-  }, [cards.length]);
+  }, [cards]);
 
   return (
     <div
@@ -148,7 +151,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                 </div>
                 
                 <div className="flex-1 w-full h-[250px] md:h-full relative group">
-                    <div className="absolute inset-0 bg-blue-50/40 rounded-full blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-blue-50/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     <Image
                         src={card.image}
                         alt={card.title}

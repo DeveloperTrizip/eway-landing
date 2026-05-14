@@ -59,8 +59,8 @@ export async function POST(request: Request) {
 
                 await transporter.sendMail(mailOptions);
                 console.log("Support email sent successfully");
-            } catch (mailErr) {
-                console.error("Email Sending Error:", mailErr);
+            } catch {
+                console.error("Email Sending Error");
                 // We proceed with the database success even if email fails
             }
 
@@ -73,13 +73,14 @@ export async function POST(request: Request) {
             error: "Failed to insert data - no rows affected"
         }, { status: 400 });
 
-    } catch (err: any) {
-        console.error("Database Error:", err);
+    } catch (err) {
+        const error = err as { code?: string; message?: string };
+        console.error("Database Error:", error);
 
         // Return a specific message if the table doesn't exist
-        if (err.code === '42P01') {
+        if (error.code === '42P01') {
             return NextResponse.json({
-                error: "Table 'ConnectWithUs' does not exist in the database."
+                error: "Table 'connectwithus' does not exist in the database."
             }, { status: 500 });
         }
 

@@ -207,7 +207,7 @@ const WhyChoose = () => {
                   Designed for startups to enterprises
                 </h4>
                 <p className="text-[14.5px] text-gray-700 group-hover:text-white/95 transition-colors duration-500 leading-relaxed">
-                  Flexible modular architecture that adapts to your organization's specific size and needs.
+                  Flexible modular architecture that adapts to your organization&apos;s specific size and needs.
                 </p>
               </div>
             </div>

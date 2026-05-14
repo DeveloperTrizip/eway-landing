@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ const Contact = () => {
             } else {
                 setStatus({ type: 'error', message: result.error || 'Failed to send message.' });
             }
-        } catch (error) {
+        } catch {
             setStatus({ type: 'error', message: 'An error occurred. Please try again later.' });
         } finally {
             setIsSubmitting(false);
@@ -67,7 +68,7 @@ const Contact = () => {
                             Connect With Us
                         </h2>
                         <h3 className="text-black text-[32px] font-semibold">
-                            Let's streamline your logistics
+                            Let&apos;s streamline your logistics
                         </h3>
                     </div>
 
@@ -188,9 +189,11 @@ const Contact = () => {
 
                 {/* Right Column: Illustration */}
                 <div className="flex justify-center lg:justify-end w-full mt-10 lg:mt-0">
-                    <img
+                    <Image
                         src="/desktop.png"
                         alt="Contact Illustration"
+                        width={650}
+                        height={450}
                         className="w-full max-w-[650px] lg:max-w-full h-auto object-contain"
                     />
                 </div>

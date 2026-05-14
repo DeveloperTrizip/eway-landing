@@ -13,6 +13,7 @@ const Hero = () => {
                     alt="Background Animation"
                     fill
                     className="object-cover"
+                    style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                     priority
                 />
                 <div className="absolute inset-0 bg-white/5 opacity-20" />

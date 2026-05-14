@@ -9,14 +9,12 @@ export default function Footer() {
 
                     {/* LEFT / Column 1 */}
                     <div className="lg:col-span-4 space-y-5">
-                        {/* 🔥 LOGO */}
                         <Image
                             src="/Sharkship_eWay.svg"
                             alt="logo"
                             width={160}
                             height={50}
                             className="object-contain mix-blend-multiply brightness-120 contrast-125 h-[50px] w-auto"
-                            style={{ clipPath: 'inset(3%)' }}
                         />
 
                         <p className="text-[13px] text-gray-700 leading-[1.8]">
@@ -74,7 +72,7 @@ export default function Footer() {
                             <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Volumetric Weight Calculator</li>
                             <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Blog</li>
                             <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Developers</li>
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">FAQ's</li>
+                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">FAQ&apos;s</li>
                         </ul>
                     </div>
 
@@ -114,19 +112,22 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+            </div>
 
-                {/* SVG Illustration wrapper */}
-                <div className="w-full mt-10 md:mt-2 xl:mt-[-40px]">
-                    <img
-                        src="https://sharkship.in/_static/illustrations/footer-bg.svg"
-                        alt="Delivery Illustration"
-                        className="w-full object-contain pointer-events-none"
-                    />
-                </div>
+            {/* SVG Illustration wrapper (Full Width) */}
+            <div className="w-full mt-10 md:mt-2 xl:mt-[-40px]">
+                <Image
+                    src="https://sharkship.in/_static/illustrations/footer-bg.svg"
+                    alt="Delivery Illustration"
+                    width={1920}
+                    height={200}
+                    className="w-full h-auto object-cover pointer-events-none block"
+                    unoptimized
+                />
             </div>
 
             {/* Blue Divider Line */}
-            <div className="w-full h-[2px] bg-[#3eb9ff] border-t border-[#009cf0]"></div>
+            <div className="w-full h-[2px] bg-[#3eb9ff] border-t border-[#009cf0] relative z-10 -mt-[3px]"></div>
 
             {/* Bottom Bar */}
             <div className="w-full bg-white px-6 md:px-5 py-3">

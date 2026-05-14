@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 const GetStarted = () => {
   return (
     <section className="w-full py-16 px-6 md:px-12 lg:px-24 font-sans bg-white relative">
@@ -61,7 +61,10 @@ const GetStarted = () => {
             <p className="text-[#333333] max-w-[700px] text-center text-[15.5px] md:text-[17px] leading-[1.6] mb-8">
               Digitize your logistics with intelligent eWB automation. Join over 500+<br className="hidden md:block" /> enterprises who trust Sharkship for their daily logistics compliance.
             </p>
-            <button className="bg-gradient-to-r from-[#2B8ED2] to-[#4DB6F1] hover:opacity-90 transition-opacity duration-300 text-white font-medium text-[16px] px-8 py-3 rounded-[8px] flex items-center justify-center gap-2">
+            <Link 
+              href="https://app.sharkship.in/sign-up?source=landing_page"
+              className="bg-gradient-to-r from-[#2B8ED2] to-[#4DB6F1] hover:opacity-90 transition-opacity duration-300 text-white font-medium text-[16px] px-8 py-3 rounded-[8px] flex items-center justify-center gap-2"
+            >
               Sign Up For Free
               <svg 
                 width="20" 
@@ -78,7 +81,7 @@ const GetStarted = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
