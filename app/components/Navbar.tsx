@@ -232,7 +232,7 @@ export default function Navbar() {
                                     </p>
                                     
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-1.5">
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item">
+                                        <Link href="/blog" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <FileText className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -450,7 +450,7 @@ export default function Navbar() {
                             {isMobileHubOpen && (
                                 <div className="mt-2 flex flex-col gap-1 animate-in slide-in-from-top-2 duration-300">
                                     <Link
-                                        href="#"
+                                        href="/blog"
                                         className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors"
                                         onClick={() => {
                                             setIsMobileMenuOpen(false);
