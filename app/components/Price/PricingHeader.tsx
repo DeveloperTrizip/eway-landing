@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tag, ShieldCheck, Clock, HeadphonesIcon } from 'lucide-react';
 
 const features = [
@@ -10,7 +9,7 @@ const features = [
 
 export default function PricingHeader() {
     return (
-        <div className="text-center max-w-4xl mx-auto mb-16 relative">
+        <div className="text-center max-w-6xl mx-auto mb-16 relative">
             <div className="absolute top-0 left-0 -translate-x-12 -translate-y-12 opacity-10 pointer-events-none hidden md:block">
                 {/* Decorative dots left */}
                 <div className="w-32 h-32 grid grid-cols-4 gap-3">
@@ -35,14 +34,14 @@ export default function PricingHeader() {
                 No hidden charges. No surprises.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 {features.map((f, i) => (
-                    <div key={i} className="flex flex-col items-center">
-                        <div className="w-[72px] h-[72px] rounded-full bg-[#f0f5fa] flex items-center justify-center mb-5 border border-[#e1ecf6]">
+                    <div key={i} className="group flex flex-col items-center p-6 md:p-8 rounded-3xl transition-all duration-300 hover:bg-[#f0f7ff] border border-transparent hover:border-[#e1ecf6] cursor-pointer">
+                        <div className="w-[60px] h-[60px] md:w-[72px] md:h-[72px] rounded-full bg-[#f0f5fa] flex items-center justify-center mb-5 border border-[#e1ecf6] group-hover:bg-white transition-colors duration-300 shadow-sm">
                             {f.icon}
                         </div>
-                        <h3 className="font-bold text-[#2764a8] mb-1">{f.title}</h3>
-                        <p className="text-[13px] text-gray-500">{f.desc}</p>
+                        <h3 className="font-bold text-[#2764a8] mb-1 group-hover:text-[#184FA2] transition-colors text-[14px] md:text-[16px]">{f.title}</h3>
+                        <p className="text-[12px] md:text-[13px] text-gray-500 font-medium">{f.desc}</p>
                     </div>
                 ))}
             </div>

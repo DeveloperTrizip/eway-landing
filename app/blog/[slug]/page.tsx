@@ -19,7 +19,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <main className="flex-grow pt-28 pb-20">
+            <main className="flex-grow pt-20 pb-20">
                 <article className="max-w-[800px] mx-auto px-6 md:px-5">
                     {/* Breadcrumbs */}
                     <nav className="flex items-center text-[13px] text-gray-500 mb-8">

@@ -6,7 +6,7 @@ export default function PlatformFee() {
             <h2 className="text-[22px] font-bold text-[#0B1A2D] mb-8">
                 1. Platform Fee <span className="font-medium text-gray-500">(Base Plan)</span>
             </h2>
-            
+
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                 {/* Left side pricing info */}
                 <div className="lg:w-[35%] flex flex-col justify-between">
@@ -20,7 +20,7 @@ export default function PlatformFee() {
                             75% OFF
                         </div>
                     </div>
-                    
+
                     <div className="space-y-6 pt-6 border-t border-gray-100">
                         <div className="flex gap-4">
                             <div className="w-5 shrink-0 mt-0.5">

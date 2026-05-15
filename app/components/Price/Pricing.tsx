@@ -7,7 +7,7 @@ import DemoCallout from './DemoCallout';
 
 export default function Pricing() {
     return (
-        <div className="pt-32 pb-20 bg-[#fafbfc]">
+        <div className="pt-20 pb-20 bg-[#fafbfc]">
             <div className="max-w-[1000px] mx-auto px-6 md:px-5">
                 <PricingHeader />
                 <PlatformFee />

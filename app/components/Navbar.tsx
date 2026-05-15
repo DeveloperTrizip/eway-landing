@@ -214,7 +214,7 @@ export default function Navbar() {
                         )}
                     </div>
 
-                    <Link href="#" className="hover:text-[#2764a8] transition-colors leading-normal">
+                    <Link href="/pricing" className="hover:text-[#2764a8] transition-colors leading-normal">
                         Pricing
                     </Link>
 
@@ -448,7 +448,7 @@ export default function Navbar() {
                             )}
                         </div>
 
-                        <Link href="#" className="w-full flex items-center justify-between font-bold px-4 py-3 rounded-xl hover:bg-blue-50/50 transition-all">
+                        <Link href="/pricing" className="w-full flex items-center justify-between font-bold px-4 py-3 rounded-xl hover:bg-blue-50/50 transition-all" onClick={() => setIsMobileMenuOpen(false)}>
                             <span>Pricing</span>
                         </Link>
 

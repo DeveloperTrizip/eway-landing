@@ -6,7 +6,7 @@ export default function BillingTotals() {
             <h2 className="text-[22px] font-bold text-[#0B1A2D] mb-8">
                 2. Billing Cycle Totals <span className="font-medium text-gray-500">(Platform Fee Only)</span>
             </h2>
-            
+
             <div className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
                 <div className="overflow-x-auto">
                     <table className="w-full text-center border-collapse min-w-[600px]">

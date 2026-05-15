@@ -26,14 +26,21 @@ export default function Blog() {
             <Navbar />
 
             {/* Main Content */}
-            <main className="flex-grow pt-24 pb-20">
-                {/* Blog Header */}
-                <div className="max-w-[1300px] mx-auto px-6 md:px-5 mt-8 md:mt-12 mb-10">
-                    <h1 className="text-[36px] md:text-[48px] font-extrabold text-gray-900 tracking-tight mb-4">
-                        Blog
+            <main className="flex-grow pt-20 pb-20 relative overflow-hidden">
+                {/* Background Glow */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#2764a8]/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+                {/* Redesigned Blog Header */}
+                <div className="text-center max-w-3xl mx-auto px-6 mt-4 mb-14">
+                    <span className="inline-block py-1 px-3 rounded-full bg-[#f0f7ff] text-[#2764a8] text-xs font-bold tracking-wider uppercase mb-4 border border-[#e1ecf6]">
+                        Sharkship Insights
+                    </span>
+                    <h1 className="text-[40px] md:text-[52px] font-extrabold text-[#0B1A2D] leading-[1.1] mb-6 tracking-tight">
+                        Stay Ahead of the <br />
+                        <span className="text-[#2764a8]">Logistics Curve</span>
                     </h1>
-                    <p className="text-[16px] md:text-[18px] text-gray-600 max-w-2xl">
-                        Latest news and updates from Sharkship. Stay ahead with insights on e-commerce, logistics, and supply chain management.
+                    <p className="text-[18px] text-gray-500 leading-relaxed max-w-2xl mx-auto">
+                        Expert perspectives on e-commerce, automated logistics, and global supply chain strategies to scale your business.
                     </p>
                 </div>
 

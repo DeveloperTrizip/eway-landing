@@ -14,9 +14,9 @@ export default function DemoCallout() {
                     <p className="text-gray-600 text-[16px]">Book a free demo with our experts and we'll help you choose the best plan</p>
                 </div>
             </div>
-            
-            <Link 
-                href="/demo" 
+
+            <Link
+                href="/demo"
                 className="bg-[#0557eb] hover:bg-[#0441b3] text-white font-medium py-3.5 px-8 rounded-lg transition-colors whitespace-nowrap text-[16px]"
             >
                 Book a Demo
