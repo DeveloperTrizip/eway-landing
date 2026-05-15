@@ -54,6 +54,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                             src={post.imageUrl}
                             alt={post.title}
                             fill
+                            sizes="100vw"
                             className="object-cover"
                             unoptimized
                         />

@@ -150,10 +150,11 @@ export default function Navbar() {
                     <div 
                         className="relative py-6 cursor-pointer" 
                         ref={featuresRef}
+                        onClick={() => setActiveDropdown(activeDropdown === 'features' ? null : 'features')}
                     >
                         <button
-                            onClick={() => setActiveDropdown(activeDropdown === 'features' ? null : 'features')}
-                            className={`flex items-center gap-1 transition-colors leading-normal cursor-pointer ${activeDropdown === 'features' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
+                            type="button"
+                            className={`flex items-center gap-1 transition-colors leading-normal ${activeDropdown === 'features' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
                         >
                             Features
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'features' ? 'rotate-180' : ''}`} />
@@ -162,6 +163,7 @@ export default function Navbar() {
                         {activeDropdown === 'features' && (
                             <div
                                 className="absolute top-[100%] left-[-190px] w-[560px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
+                                onClick={(e) => e.stopPropagation()}
                             >
                                 <div className="px-6 py-5">
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">
@@ -195,7 +197,7 @@ export default function Navbar() {
                                 <div className="bg-[#f8fbff] p-6 flex items-center justify-between border-t border-gray-50">
                                     <div className="flex items-center gap-4">
                                         <div className="w-[56px] h-[56px] relative bg-white rounded-xl shadow-sm flex items-center justify-center p-3 border border-blue-50/50">
-                                            <Image src="/Sharkship_eWay.svg" alt="Shipping" width={40} height={40} className="object-contain opacity-60" />
+                                            <Image src="/Sharkship_eWay.svg" alt="Shipping" width={40} height={40} sizes="40px" className="object-contain opacity-60" />
                                         </div>
                                         <div className="flex flex-col">
                                             <h5 className="font-medium text-gray-900 text-[13.5px] leading-tight">Choose From Multiple Shipping Partners!</h5>
@@ -220,10 +222,11 @@ export default function Navbar() {
                     <div 
                         className="relative py-6 cursor-pointer"
                         ref={hubRef}
+                        onClick={() => setActiveDropdown(activeDropdown === 'hub' ? null : 'hub')}
                     >
                         <button
-                            onClick={() => setActiveDropdown(activeDropdown === 'hub' ? null : 'hub')}
-                            className={`flex items-center gap-1 transition-colors leading-normal cursor-pointer ${activeDropdown === 'hub' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
+                            type="button"
+                            className={`flex items-center gap-1 transition-colors leading-normal ${activeDropdown === 'hub' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
                         >
                             Knowledge Hub
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'hub' ? 'rotate-180' : ''}`} />
@@ -231,6 +234,7 @@ export default function Navbar() {
                         {activeDropdown === 'hub' && (
                             <div 
                                 className="absolute top-[100%] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
+                                onClick={(e) => e.stopPropagation()}
                             >
                                 <div className="px-6 py-5">
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">
@@ -278,10 +282,11 @@ export default function Navbar() {
                     <div 
                         className="relative py-6 cursor-pointer"
                         ref={orgRef}
+                        onClick={() => setActiveDropdown(activeDropdown === 'org' ? null : 'org')}
                     >
                         <button
-                            onClick={() => setActiveDropdown(activeDropdown === 'org' ? null : 'org')}
-                            className={`flex items-center gap-1 transition-colors leading-normal cursor-pointer ${activeDropdown === 'org' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
+                            type="button"
+                            className={`flex items-center gap-1 transition-colors leading-normal ${activeDropdown === 'org' ? 'text-[#2764a8]' : 'hover:text-[#2764a8]'}`}
                         >
                             Organization
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'org' ? 'rotate-180' : ''}`} />
@@ -289,6 +294,7 @@ export default function Navbar() {
                         {activeDropdown === 'org' && (
                             <div 
                                 className="absolute top-[100%] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
+                                onClick={(e) => e.stopPropagation()}
                             >
                                 <div className="px-6 py-5">
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">

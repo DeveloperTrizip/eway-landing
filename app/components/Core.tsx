@@ -91,7 +91,7 @@ const Core = () => {
     return (
         <section
             id="capabilities"
-            className="relative w-full bg-[#fbfdff] overflow-hidden select-none py-4 md:py-8 lg:py-10"
+            className="relative w-full bg-[#fbfdff] overflow-hidden py-4 md:py-8 lg:py-10"
         >
             {/* Highly Optimized Background Gradients (No expensive blur filters) */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">

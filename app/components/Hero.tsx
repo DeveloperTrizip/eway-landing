@@ -12,6 +12,7 @@ const Hero = () => {
                     src="/bg.gif"
                     alt="Background Animation"
                     fill
+                    sizes="100vw"
                     className="object-cover"
                     style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                     priority
@@ -67,6 +68,7 @@ const Hero = () => {
                             src="/Group.png"
                             alt="Sharkship Dashboard and Team"
                             fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-contain object-bottom transition-all duration-1000"
                             priority
                         />

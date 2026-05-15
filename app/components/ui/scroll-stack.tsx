@@ -156,6 +156,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                         src={card.image}
                         alt={card.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-contain relative z-10 p-2"
                         priority={index === 0}
                     />
