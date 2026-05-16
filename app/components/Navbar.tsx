@@ -112,23 +112,7 @@ export default function Navbar() {
 
     return (
         <div className="w-full font-sans sticky top-0 z-[110] bg-white shadow-sm border-b border-gray-100">
-            {/* Top Banner */}
-            <div className="hidden lg:flex w-full bg-[#2764a8] text-white items-center justify-center py-[8px] px-4 text-sm transition-all duration-300">
-                <div className="flex items-center flex-wrap justify-center gap-[8px] text-[12.5px] tracking-wide max-w-[1400px]">
-                    <span className="flex items-center gap-2">
-                        <span role="img" aria-label="gift">🎁</span>
-                        <span className="font-[400]">
-                            Recharge ₹1,000 Today and Get 30% Cashback in Your Wallet!
-                            <span className="font-bold ml-1">Use Code: NEW30</span> |
-                            Limited-Time Offer on Your First Recharge!
-                            <Link href="#" className="underline font-[400] text-gray-100 hover:text-white ml-[2px]">*T&C Apply.</Link>
-                        </span>
-                    </span>
-                    <button className="bg-white text-black font-bold text-[11px] leading-none rounded-full px-4 py-[6px] ml-4 hover:bg-gray-50 transition-colors">
-                        Signup Now
-                    </button>
-                </div>
-            </div>
+
 
             {/* Main Navbar */}
             <div className="w-full bg-white h-[76px] flex items-center justify-between px-10 md:px-32 mx-auto relative z-[120]">
@@ -147,8 +131,8 @@ export default function Navbar() {
                 {/* Desktop Nav Links */}
                 <nav className="hidden lg:flex items-center xl:gap-8 lg:gap-6 text-[#1a1a1a] text-[14.5px] ml-auto mr-16 font-[500]">
                     {/* Features */}
-                    <div 
-                        className="relative py-6 cursor-pointer" 
+                    <div
+                        className="relative py-6 cursor-pointer"
                         ref={featuresRef}
                         onClick={() => setActiveDropdown(activeDropdown === 'features' ? null : 'features')}
                     >
@@ -194,22 +178,7 @@ export default function Navbar() {
                                     </div>
                                 </div>
 
-                                <div className="bg-[#f8fbff] p-6 flex items-center justify-between border-t border-gray-50">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-[56px] h-[56px] relative bg-white rounded-xl shadow-sm flex items-center justify-center p-3 border border-blue-50/50">
-                                            <Image src="/Sharkship_eWay.svg" alt="Shipping" width={40} height={40} sizes="40px" className="object-contain opacity-60" />
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <h5 className="font-medium text-gray-900 text-[13.5px] leading-tight">Choose From Multiple Shipping Partners!</h5>
-                                            <p className="text-[10.5px] text-gray-400 font-normal leading-tight mt-1 max-w-[280px]">
-                                                Partner with us for seamless shipping solutions and faster deliveries.
-                                            </p>
-                                            <Link href="#" className="mt-3 w-fit border border-gray-200 px-4 py-1.5 rounded-lg text-[11px] font-medium text-gray-800 hover:bg-gray-50 transition-all shadow-sm" onClick={() => setActiveDropdown(null)}>
-                                                Contact Us
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         )}
                     </div>
@@ -219,7 +188,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Knowledge Hub */}
-                    <div 
+                    <div
                         className="relative py-6 cursor-pointer"
                         ref={hubRef}
                         onClick={() => setActiveDropdown(activeDropdown === 'hub' ? null : 'hub')}
@@ -232,7 +201,7 @@ export default function Navbar() {
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'hub' ? 'rotate-180' : ''}`} />
                         </button>
                         {activeDropdown === 'hub' && (
-                            <div 
+                            <div
                                 className="absolute top-[100%] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
                                 onClick={(e) => e.stopPropagation()}
                             >
@@ -240,7 +209,7 @@ export default function Navbar() {
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">
                                         Learn How To Scale Your Shipping
                                     </p>
-                                    
+
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-1.5">
                                         <Link href="/blog" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
@@ -279,7 +248,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Organization */}
-                    <div 
+                    <div
                         className="relative py-6 cursor-pointer"
                         ref={orgRef}
                         onClick={() => setActiveDropdown(activeDropdown === 'org' ? null : 'org')}
@@ -292,7 +261,7 @@ export default function Navbar() {
                             <ChevronDown className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${activeDropdown === 'org' ? 'rotate-180' : ''}`} />
                         </button>
                         {activeDropdown === 'org' && (
-                            <div 
+                            <div
                                 className="absolute top-[100%] left-[-150px] w-[520px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50"
                                 onClick={(e) => e.stopPropagation()}
                             >
@@ -300,7 +269,7 @@ export default function Navbar() {
                                     <p className="text-[10.5px] uppercase tracking-[0.05em] text-gray-400 font-medium mb-3.5 whitespace-nowrap">
                                         Explore Our Full Company Information!
                                     </p>
-                                    
+
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-1.5">
                                         <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
@@ -350,18 +319,22 @@ export default function Navbar() {
 
                 {/* Desktop Buttons */}
                 <div className="hidden lg:flex items-center gap-3 shrink-0">
-                    <Link
-                        href="https://app.sharkship.in/sign-up?source=landing_page"
+                    <a
+                        href="https://ewb.sharkship.in/#/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-white border border-gray-100 text-gray-800 font-bold text-[13px] px-5 py-2 rounded-lg hover:bg-blue-50/50 transition-all duration-200"
                     >
                         Login
-                    </Link>
-                    <Link
-                        href="https://app.sharkship.in/sign-up?source=landing_page"
+                    </a>
+                    <a
+                        href="https://ewb.sharkship.in/#/register"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-[#2764a8] text-white font-bold text-[13px] px-5 py-2 rounded-lg shadow-sm hover:bg-[#1e4f8a] transition-all duration-200 whitespace-nowrap"
                     >
-                        Try For Free
-                    </Link>
+                        Sign up
+                    </a>
                 </div>
 
                 {/* Mobile Menu Toggle Button */}
@@ -392,20 +365,24 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex flex-col gap-3 mb-8 w-full">
-                        <Link
-                            href="https://app.sharkship.in/sign-up?source=landing_page"
+                        <a
+                            href="https://ewb.sharkship.in/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="w-full flex items-center justify-center bg-white border border-gray-100 text-gray-800 font-bold text-[15px] py-3 rounded-xl shadow-sm transition-all active:scale-[0.98]"
                         >
                             <span>Login</span>
-                        </Link>
-                        <Link
-                            href="https://app.sharkship.in/sign-up?source=landing_page"
+                        </a>
+                        <a
+                            href="https://ewb.sharkship.in/#/register"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="w-full flex items-center justify-center bg-[#2764a8] text-white font-bold text-[15px] py-3 rounded-xl shadow-md transition-all active:scale-[0.98]"
                         >
-                            <span>Try For Free</span>
-                        </Link>
+                            <span>Sign up</span>
+                        </a>
                     </div>
 
                     <div className="text-gray-400 font-bold text-[10.5px] uppercase tracking-[0.05em] mb-5">
