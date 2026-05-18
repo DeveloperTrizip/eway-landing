@@ -62,7 +62,7 @@ const GetStarted = () => {
               Digitize your logistics with intelligent eWB automation. Join over 500+<br className="hidden md:block" /> enterprises who trust Sharkship for their daily logistics compliance.
             </p>
             <Link 
-              href="https://app.sharkship.in/sign-up?source=landing_page"
+              href="https://ewb.sharkship.in/#/register"
               className="bg-gradient-to-r from-[#2B8ED2] to-[#4DB6F1] hover:opacity-90 transition-opacity duration-300 text-white font-medium text-[16px] px-8 py-3 rounded-[8px] flex items-center justify-center gap-2"
             >
               Sign Up For Free
