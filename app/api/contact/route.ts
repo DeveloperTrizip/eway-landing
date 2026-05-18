@@ -26,16 +26,16 @@ export async function POST(request: Request) {
             }, { status: 400 });
         }
 
-        const emailUser = env("SUPPORT_EMAIL_USER");
-        const emailPass = env("SUPPORT_EMAIL_PASS");
-        const emailFrom = env("SUPPORT_EMAIL_FROM");
-        const emailTo = env("SUPPORT_EMAIL_TO");
+        const emailUser = env("NEXT_SUPPORT_EMAIL_USER");
+        const emailPass = env("NEXT_SUPPORT_EMAIL_PASS");
+        const emailFrom = env("NEXT_SUPPORT_EMAIL_FROM");
+        const emailTo = env("NEXT_SUPPORT_EMAIL_TO");
 
         const missingEnv = [
-            !emailUser && "SUPPORT_EMAIL_USER",
-            !emailPass && "SUPPORT_EMAIL_PASS",
-            !emailFrom && "SUPPORT_EMAIL_FROM",
-            !emailTo && "SUPPORT_EMAIL_TO",
+            !emailUser && "NEXT_SUPPORT_EMAIL_USER",
+            !emailPass && "NEXT_SUPPORT_EMAIL_PASS",
+            !emailFrom && "NEXT_SUPPORT_EMAIL_FROM",
+            !emailTo && "NEXT_SUPPORT_EMAIL_TO",
         ].filter(Boolean) as string[];
 
         if (missingEnv.length > 0) {
