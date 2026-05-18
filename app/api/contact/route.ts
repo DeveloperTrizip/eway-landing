@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+/** Read at request time — avoids Next.js inlining static `process.env.X` at build (Amplify/Lambda). */
+function env(name: string): string | undefined {
+    return process.env[name];
+}
+
+export const dynamic = "force-dynamic";
+
 export async function POST(request: Request) {
     try {
         const body = await request.json().catch(() => null);
@@ -19,17 +26,36 @@ export async function POST(request: Request) {
             }, { status: 400 });
         }
 
+        const emailUser = env("SUPPORT_EMAIL_USER");
+        const emailPass = env("SUPPORT_EMAIL_PASS");
+        const emailFrom = env("SUPPORT_EMAIL_FROM");
+        const emailTo = env("SUPPORT_EMAIL_TO");
+
+        const missingEnv = [
+            !emailUser && "SUPPORT_EMAIL_USER",
+            !emailPass && "SUPPORT_EMAIL_PASS",
+            !emailFrom && "SUPPORT_EMAIL_FROM",
+            !emailTo && "SUPPORT_EMAIL_TO",
+        ].filter(Boolean) as string[];
+
+        if (missingEnv.length > 0) {
+            console.error("Contact / email error: missing env:", missingEnv.join(", "));
+            return NextResponse.json({
+                error: "We could not send your message. Please try again later or contact us directly."
+            }, { status: 500 });
+        }
+
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.SUPPORT_EMAIL_USER,
-                pass: process.env.SUPPORT_EMAIL_PASS
-            }
+                user: emailUser,
+                pass: emailPass,
+            },
         });
 
         const mailOptions = {
-            from: process.env.SUPPORT_EMAIL_FROM,
-            to: process.env.SUPPORT_EMAIL_TO,
+            from: emailFrom,
+            to: emailTo,
             subject: `New Contact Request: ${Name} from ${Company}`,
             html: `
                         <h2>New Contact Form Submission</h2>
