@@ -18,10 +18,9 @@ export default function Footer() {
                         />
 
                         <p className="text-[13px] text-gray-700 leading-[1.8]">
-                            Sharkship is a reliable shipping & logistics partner,
-                            committed to fast, secure & scalable freight solutions. We
-                            simplify end-to-end logistics with advanced technology &
-                            real-time tracking.
+                        Sharkship eWayBill is a smart compliance automation platform built to simplify E-Way Bill operations for modern logistics businesses. From bulk EWB generation to one-click extensions, real-time tracking, 
+                        and centralized dashboards we help businesses reduce manual effort, minimize compliance risks, 
+                        and manage shipments with greater speed, accuracy, and control.
                         </p>
 
                         {/* SOCIAL ICONS (EXACT STYLE) */}
@@ -68,8 +67,6 @@ export default function Footer() {
                     <div className="lg:col-span-2">
                         <h3 className="font-bold text-gray-900 mb-5 text-[15px]">Resources</h3>
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium">
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Shipping Rate Calculator</li>
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Volumetric Weight Calculator</li>
                             <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Blog</li>
                             <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Developers</li>
                             <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">FAQ&apos;s</li>
@@ -82,7 +79,6 @@ export default function Footer() {
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium pt-1">
                             <li className="hover:text-blue-500 cursor-pointer transition-colors">About Us</li>
                             <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Contact Us</li>
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Careers</li>
                         </ul>
                     </div>
 
@@ -108,7 +104,7 @@ export default function Footer() {
                                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                                 </svg>
                             </div>
-                            <p>support@sharkship.in</p>
+                            <p>ewaybill@sharkship.in</p>
                         </div>
                     </div>
                 </div>
@@ -132,13 +128,11 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className="w-full bg-white px-6 md:px-5 py-3">
                 <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-center text-[12px] text-gray-700 gap-3">
-                    <p>Copyright © 2026 Trizip Technologies Pvt. Ltd. All rights reserved.</p>
+                    <p>Copyright © 2026 Sharkship Technologies Pvt. Ltd. All rights reserved.</p>
 
                     <div className="flex flex-wrap gap-4 font-medium">
                         <span className="hover:text-blue-500 cursor-pointer transition-colors">Privacy Policy</span>
                         <span className="hover:text-blue-500 cursor-pointer transition-colors">Terms & Conditions</span>
-                        <span className="hover:text-blue-500 cursor-pointer transition-colors">Refund & Cancellation Policy</span>
-                        <span className="hover:text-blue-500 cursor-pointer transition-colors">Shipping & Return Policy</span>
                     </div>
                 </div>
             </div>
