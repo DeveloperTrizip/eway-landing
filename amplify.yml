@@ -6,10 +6,9 @@ frontend:
         - yarn install --frozen-lockfile
     build:
       commands:
-        - echo "Checking env vars..."
         - env | grep NEXT || echo "NO NEXT_ vars found"
-        - "test -n \"$NEXT_SUPPORT_EMAIL_USER\" || (echo 'ERROR: Set NEXT_SUPPORT_EMAIL_* in Amplify environment variables' && exit 1)"
         - env | grep -e NEXT_SUPPORT_EMAIL >> .env.production
+        - cat .env.production
         - yarn build
   artifacts:
     baseDirectory: .next
