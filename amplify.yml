@@ -1,0 +1,25 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install --frozen-lockfile
+    build:
+      commands:
+        # Amplify console env vars are NOT passed to Next.js SSR Lambdas by default.
+        # Write them into .env.production before `next build` (AWS SSR docs).
+        - |
+          if [ -z "$NEXT_SUPPORT_EMAIL_USER" ]; then
+            echo "ERROR: Set NEXT_SUPPORT_EMAIL_* in Amplify → Environment variables, then redeploy."
+            exit 1
+          fi
+        - env | grep -e NEXT_SUPPORT_EMAIL >> .env.production
+        - yarn build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
