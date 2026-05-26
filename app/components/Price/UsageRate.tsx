@@ -9,7 +9,7 @@ export default function UsageRate() {
                     <FileText className="w-10 h-10 text-[#00b087]" />
                 </div>
                 <div>
-                    <h2 className="text-[20px] font-bold text-[#0B1A2D] mb-1">3. EWB Usage Rate</h2>
+                    <h2 className="text-[20px] font-bold text-[#0B1A2D] mb-1">EWB Usage Rate</h2>
                     <div className="flex items-baseline gap-2 mb-1">
                         <span className="text-[#00b087] text-[36px] font-extrabold tracking-tight">₹0.25</span>
                         <span className="text-gray-600 font-medium">/ ewb</span>

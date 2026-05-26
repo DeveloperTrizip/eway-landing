@@ -67,9 +67,44 @@ export default function Footer() {
                     <div className="lg:col-span-2">
                         <h3 className="font-bold text-gray-900 mb-5 text-[15px]">Resources</h3>
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium">
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Blog</li>
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Developers</li>
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">FAQ&apos;s</li>
+                            <li className="pt-1">Blog</li>
+                            <li className="pt-1">E-Way Bill Guide</li>
+                            <li className="pt-1">FAQs</li>
+                            <li className="pt-1">
+                                Download the App
+                                <div className="mt-3 flex flex-wrap items-center gap-3">
+                                    <a
+                                        href="https://play.google.com/store/apps/details?id=com.trizip_app.ewb&pcampaignid=web_share"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex w-fit rounded-md transition-transform hover:scale-[1.02]"
+                                        aria-label="Download on Google Play"
+                                    >
+                                        <Image
+                                            src="/playstore.svg"
+                                            alt="Play Store"
+                                            width={140}
+                                            height={42}
+                                            className="h-10 w-auto"
+                                        />
+                                    </a>
+                                    <a
+                                        href="https://apps.apple.com/in/app/sharkship-ewaybill/id6748875119"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex w-fit rounded-md transition-transform hover:scale-[1.02]"
+                                        aria-label="Download on the App Store"
+                                    >
+                                        <Image
+                                            src="/applestore.svg"
+                                            alt="App Store"
+                                            width={140}
+                                            height={42}
+                                            className="h-10 w-auto"
+                                        />
+                                    </a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
 
@@ -77,8 +112,10 @@ export default function Footer() {
                     <div className="lg:col-span-2">
                         <h3 className="font-bold text-gray-900 mb-5 text-[15px]">Company</h3>
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium pt-1">
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors">About Us</li>
-                            <li className="hover:text-blue-500 cursor-pointer transition-colors pt-1">Contact Us</li>
+                            <li>About Us</li>
+                            <li className="pt-1">Contact Us</li>
+                            <li className="pt-1">Privacy Policy</li>
+                            <li className="pt-1">Terms & Conditions</li>
                         </ul>
                     </div>
 
@@ -129,11 +166,6 @@ export default function Footer() {
             <div className="w-full bg-white px-6 md:px-5 py-3">
                 <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-center text-[12px] text-gray-700 gap-3">
                     <p>Copyright © 2026 Sharkship Technologies Pvt. Ltd. All rights reserved.</p>
-
-                    <div className="flex flex-wrap gap-4 font-medium">
-                        <span className="hover:text-blue-500 cursor-pointer transition-colors">Privacy Policy</span>
-                        <span className="hover:text-blue-500 cursor-pointer transition-colors">Terms & Conditions</span>
-                    </div>
                 </div>
             </div>
 
