@@ -123,7 +123,8 @@ export default function Navbar() {
                         alt="Sharkship Logo"
                         width={180}
                         height={50}
-                        className="object-contain h-[42px] w-auto"
+                        className="object-contain h-[42px]"
+                        style={{ width: 'auto' }}
                         priority
                     />
                 </Link>
@@ -291,7 +292,7 @@ export default function Navbar() {
                                             </div>
                                         </Link>
 
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
+                                        <Link href="/privacy-policy" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <ShieldCheck className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -301,7 +302,7 @@ export default function Navbar() {
                                             </div>
                                         </Link>
 
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
+                                        <Link href="/privacy-policy#terms-conditions" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <FileText className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -505,7 +506,7 @@ export default function Navbar() {
                                             <p className="text-[11.5px] text-gray-400 mt-1 font-normal leading-tight">Have a question? We'd love to hear...</p>
                                         </div>
                                     </Link>
-                                    <Link href="#" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
+                                    <Link href="/privacy-policy" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
                                         <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
                                             <ShieldCheck className="w-5 h-5 text-[#2764a8]" />
                                         </div>
@@ -514,7 +515,7 @@ export default function Navbar() {
                                             <p className="text-[11.5px] text-gray-400 mt-1 font-normal leading-tight">We are committed to protecting you...</p>
                                         </div>
                                     </Link>
-                                    <Link href="#" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
+                                    <Link href="/privacy-policy#terms-conditions" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
                                         <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
                                             <FileText className="w-5 h-5 text-[#2764a8]" />
                                         </div>
