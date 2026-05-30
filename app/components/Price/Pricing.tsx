@@ -40,12 +40,12 @@ const includedFeatures = [
     },
     {
         title: "Bulk actions from Excel",
-        description: "Update, extend, and manage large EWB batches without doing one record at a time.",
+        description: "Update, extend, and manage large E-Way Bill batches without doing one record at a time.",
         icon: FileSpreadsheet,
     },
     {
         title: "Unified dashboard",
-        description: "Track expiring, extended, and active EWBs from one operational screen.",
+        description: "Track expiring, extended, and active E-Way Bills from one operational screen.",
         icon: LayoutDashboard,
     },
     {
@@ -67,7 +67,7 @@ const includedFeatures = [
 
 const pricingPoints = [
     "One platform fee per organisation",
-    "Usage billed only on EWBs generated",
+    "Usage billed only on E-Way Bills generated",
     "Recharge usage through wallet top-up",
     "Quarterly, half-yearly, and annual billing cycles",
 ];
@@ -83,11 +83,11 @@ export default function Pricing() {
                                 Pricing
                             </p>
                             <h1 className="max-w-[700px] text-[36px] font-bold leading-[1.1] text-[#10233e] md:text-[54px]">
-                                Clear pricing for teams that run eWay Bill operations every day.
+                                Clear pricing for teams that run E-Way Bill operations every day.
                             </h1>
                             <p className="mt-5 max-w-[640px] text-[16px] leading-7 text-[#53657d] md:text-[18px]">
                                 No decorative plan maze, no fake enterprise tiers. You pay one discounted platform fee for the
-                                organisation, then a simple per-EWB usage charge through top-up.
+                                organisation, then a simple per E-Way Bill usage charge through top-up.
                             </p>
 
                             <div className="mt-8 flex flex-wrap gap-3">
@@ -125,14 +125,14 @@ export default function Pricing() {
                                     <Wallet className="mt-0.5 h-5 w-5 shrink-0 text-[#8fd1ff]" />
                                     <div>
                                         <p className="font-semibold">Usage rate</p>
-                                        <p className="text-[14px] leading-6 text-white/72">Rs 0.25 per eWay Bill generated, billed from top-up balance.</p>
+                                        <p className="text-[14px] leading-6 text-white/72">Rs 0.25 per E-Way Bill generated, billed from top-up balance.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <Building2 className="mt-0.5 h-5 w-5 shrink-0 text-[#8fd1ff]" />
                                     <div>
                                         <p className="font-semibold">Billing scope</p>
-                                        <p className="text-[14px] leading-6 text-white/72">One organisation account with access to the core eWay Bill operating stack.</p>
+                                        <p className="text-[14px] leading-6 text-white/72">One organisation account with access to the core E-Way Bill operating stack.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
@@ -188,8 +188,8 @@ export default function Pricing() {
                             <div className="mt-8 space-y-5">
                                 {[
                                     "Choose a quarterly, half-yearly, or annual billing cycle for platform access.",
-                                    "Keep your usage wallet topped up for the EWBs you generate.",
-                                    "Usage is deducted at Rs 0.25 per EWB, so spend scales with activity.",
+                                    "Keep your usage wallet topped up for the E-Way Bills you generate.",
+                                    "Usage is deducted at Rs 0.25 per E-Way Bill, so spend scales with activity.",
                                 ].map((item) => (
                                     <div key={item} className="flex gap-3">
                                         <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#2b8ed2]" />
@@ -200,10 +200,10 @@ export default function Pricing() {
                         </div>
 
                         <div className="rounded-[28px] border border-[#dbe5f1] bg-white p-8 shadow-[0_12px_35px_rgba(12,32,62,0.05)] md:p-10">
-                            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2b8ed2]">3. EWB Usage Rate</p>
+                            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#2b8ed2]">3. E-Way Bill Usage Rate</p>
                             <div className="mt-4 flex items-end gap-2">
                                 <span className="text-[42px] font-bold leading-none text-[#10233e]">Rs 0.25</span>
-                                <span className="pb-1 text-[17px] font-medium text-[#61748b]">/ ewb</span>
+                                <span className="pb-1 text-[17px] font-medium text-[#61748b]">/ E-Way Bill</span>
                             </div>
                             <p className="mt-3 text-[15px] font-medium text-[#36536d]">Recharged using Topup</p>
 
@@ -216,7 +216,7 @@ export default function Pricing() {
                                     </div>
                                     <div className="flex gap-3">
                                         <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#2b8ed2]" />
-                                        <p className="text-[15px] leading-7 text-[#36536d]">Pay Rs 0.25 for every eWay Bill generated</p>
+                                        <p className="text-[15px] leading-7 text-[#36536d]">Pay Rs 0.25 for every E-Way Bill generated</p>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +233,7 @@ export default function Pricing() {
                             </h2>
                         </div>
                         <p className="max-w-[320px] text-[14px] leading-6 text-[#61748b]">
-                            These totals cover the platform fee only. Usage top-up remains separate and depends on EWB activity.
+                            These totals cover the platform fee only. Usage top-up remains separate and depends on E-Way Bill activity.
                         </p>
                     </div>
 
@@ -264,7 +264,7 @@ export default function Pricing() {
                                 We can help you estimate cost based on your actual dispatch volume.
                             </h2>
                             <p className="mt-4 text-[16px] leading-7 text-white/78">
-                                If you want pricing mapped to branches, GSTINs, or expected monthly EWB generation, speak to the team and get a realistic estimate.
+                                If you want pricing mapped to branches, GSTINs, or expected monthly E-Way Bill generation, speak to the team and get a realistic estimate.
                             </p>
                         </div>
 

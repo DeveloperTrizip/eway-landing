@@ -16,6 +16,7 @@ const Hero = () => {
                     className="object-cover"
                     style={{ willChange: 'transform', transform: 'translateZ(0)' }}
                     priority
+                    unoptimized
                 />
                 <div className="absolute inset-0 bg-white/5 opacity-20" />
             </div>
@@ -32,7 +33,8 @@ const Hero = () => {
                             alt="Sharkship eWayBill"
                             width={400}
                             height={120}
-                            className="w-auto h-[60px] md:h-[82px] object-contain drop-shadow-sm"
+                            className="h-[60px] md:h-[82px] object-contain drop-shadow-sm"
+                            style={{ width: 'auto' }}
                             priority
                         />
                     </div>

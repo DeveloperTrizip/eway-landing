@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -14,7 +15,8 @@ export default function Footer() {
                             alt="logo"
                             width={160}
                             height={50}
-                            className="object-contain mix-blend-multiply brightness-120 contrast-125 h-[50px] w-auto"
+                            className="object-contain mix-blend-multiply brightness-120 contrast-125 h-[50px]"
+                            style={{ width: 'auto' }}
                         />
 
                         <p className="text-[13px] text-gray-700 leading-[1.8]">
@@ -46,13 +48,6 @@ export default function Footer() {
                                 </svg>
                             </a>
 
-                            {/* YouTube */}
-                            <a href="https://www.youtube.com/oops" target="_blank" rel="noopener noreferrer" className="w-8 h-8 flex items-center justify-center bg-[#FF0000] rounded-md transition-transform hover:scale-105 cursor-pointer">
-                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M21.582 6.186a2.68 2.68 0 00-1.884-1.892C18.033 3.842 12 3.842 12 3.842s-6.033 0-7.698.452a2.68 2.68 0 00-1.884 1.892C2 7.864 2 12 2 12s0 4.136.418 5.814a2.68 2.68 0 001.884 1.892c1.665.451 7.698.451 7.698.451s6.033 0 7.698-.451a2.68 2.68 0 001.884-1.892C22 16.136 22 12 22 12s0-4.136-.418-5.814zM10.02 15.113V8.887L15.42 12l-5.4 3.113z" />
-                                </svg>
-                            </a>
-
                             {/* LinkedIn */}
                             <a href="https://www.linkedin.com/company/sharkshipz/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 flex items-center justify-center bg-[#0A66C2] rounded-md transition-transform hover:scale-105 cursor-pointer">
                                 <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -64,43 +59,45 @@ export default function Footer() {
                     </div>
 
                     {/* Resources */}
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-3">
                         <h3 className="font-bold text-gray-900 mb-5 text-[15px]">Resources</h3>
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium">
                             <li className="pt-1">Blog</li>
                             <li className="pt-1">E-Way Bill Guide</li>
                             <li className="pt-1">FAQs</li>
-                            <li className="pt-1">
-                                Download the App
-                                <div className="mt-3 flex flex-wrap items-center gap-3">
+                            <li>
+                                <span className="block pt-1">Download the App</span>
+                                <div className="mt-1.5 flex flex-row flex-wrap items-center gap-2 sm:gap-3">
                                     <a
                                         href="https://play.google.com/store/apps/details?id=com.trizip_app.ewb&pcampaignid=web_share"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex w-fit rounded-md transition-transform hover:scale-[1.02]"
+                                        className="inline-flex shrink-0 transition-transform hover:scale-[1.02]"
                                         aria-label="Download on Google Play"
                                     >
                                         <Image
                                             src="/playstore.svg"
-                                            alt="Play Store"
-                                            width={140}
-                                            height={42}
-                                            className="h-10 w-auto"
+                                            alt="Download on Google Play"
+                                            width={127}
+                                            height={38}
+                                            unoptimized
+                                            className="h-[38px] w-auto block"
                                         />
                                     </a>
                                     <a
                                         href="https://apps.apple.com/in/app/sharkship-ewaybill/id6748875119"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex w-fit rounded-md transition-transform hover:scale-[1.02]"
+                                        className="inline-flex shrink-0 transition-transform hover:scale-[1.02]"
                                         aria-label="Download on the App Store"
                                     >
                                         <Image
                                             src="/applestore.svg"
-                                            alt="App Store"
-                                            width={140}
-                                            height={42}
-                                            className="h-10 w-auto"
+                                            alt="Download on the App Store"
+                                            width={127}
+                                            height={38}
+                                            unoptimized
+                                            className="h-[38px] w-auto block"
                                         />
                                     </a>
                                 </div>
@@ -114,13 +111,21 @@ export default function Footer() {
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium pt-1">
                             <li>About Us</li>
                             <li className="pt-1">Contact Us</li>
-                            <li className="pt-1">Privacy Policy</li>
-                            <li className="pt-1">Terms & Conditions</li>
+                            <li className="pt-1">
+                                <Link href="/privacy-policy" className="hover:text-[#2B9AEE] transition-colors">
+                                    Privacy Policy
+                                </Link>
+                            </li>
+                            <li className="pt-1">
+                                <Link href="/privacy-policy#terms-conditions" className="hover:text-[#2B9AEE] transition-colors">
+                                    Terms &amp; Conditions
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
                     {/* Contact */}
-                    <div className="lg:col-span-4 lg:pl-4">
+                    <div className="lg:col-span-3 lg:pl-4">
                         <h3 className="font-bold text-gray-900 mb-5 text-[15px]">Contact Us</h3>
 
                         <div className="flex items-start gap-3 text-[13px] text-gray-700 font-medium mb-4 pt-1 leading-relaxed">
