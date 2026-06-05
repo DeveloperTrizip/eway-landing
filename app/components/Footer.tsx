@@ -64,7 +64,11 @@ export default function Footer() {
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium">
                             <li className="pt-1">Blog</li>
                             <li className="pt-1">E-Way Bill Guide</li>
-                            <li className="pt-1">FAQs</li>
+                            <li className="pt-1">
+                                <Link href="/faq" className="hover:text-[#2B9AEE] transition-colors">
+                                    FAQs
+                                </Link>
+                            </li>
                             <li>
                                 <span className="block pt-1">Download the App</span>
                                 <div className="mt-1.5 flex flex-row flex-wrap items-center gap-2 sm:gap-3">
@@ -109,8 +113,16 @@ export default function Footer() {
                     <div className="lg:col-span-2">
                         <h3 className="font-bold text-gray-900 mb-5 text-[15px]">Company</h3>
                         <ul className="space-y-[14px] text-[13px] text-gray-700 font-medium pt-1">
-                            <li>About Us</li>
-                            <li className="pt-1">Contact Us</li>
+                            <li>
+                                <Link href="/about-us" className="hover:text-[#2B9AEE] transition-colors">
+                                    About Us
+                                </Link>
+                            </li>
+                            <li className="pt-1">
+                                <Link href="/contact-us" className="hover:text-[#2B9AEE] transition-colors">
+                                    Contact Us
+                                </Link>
+                            </li>
                             <li className="pt-1">
                                 <Link href="/privacy-policy" className="hover:text-[#2B9AEE] transition-colors">
                                     Privacy Policy

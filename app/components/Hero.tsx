@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { BOOK_DEMO_HREF } from '../data/routes';
 
 const Hero = () => {
     return (
@@ -51,13 +53,13 @@ const Hero = () => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
-                        <button
-                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="px-9 py-4 rounded-2xl text-white font-black text-lg shadow-[0_10px_25px_rgba(24,79,162,0.25)] hover:shadow-[0_15px_35px_rgba(24,79,162,0.35)] hover:-translate-y-1 active:scale-95 transition-all duration-300"
+                        <Link
+                            href={BOOK_DEMO_HREF}
+                            className="px-9 py-4 rounded-2xl text-white font-black text-lg shadow-[0_10px_25px_rgba(24,79,162,0.25)] hover:shadow-[0_15px_35px_rgba(24,79,162,0.35)] hover:-translate-y-1 active:scale-95 transition-all duration-300 inline-flex items-center justify-center"
                             style={{ background: 'linear-gradient(135deg, #184FA2 0%, #27AAE2 49.83%, #91D3EE 100%)' }}
                         >
                             Request Demo
-                        </button>
+                        </Link>
                         <button className="px-9 py-4 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-[#91D3EE]/40 text-[#184FA2] font-black text-lg shadow-sm hover:bg-white hover:-translate-y-1 active:scale-95 transition-all duration-300">
                             Watch Overview
                         </button>
