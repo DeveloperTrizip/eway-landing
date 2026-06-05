@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
 import Link from 'next/link';
+import { BOOK_DEMO_HREF } from '../../data/routes';
 
 export default function DemoCallout() {
     return (
@@ -16,7 +17,7 @@ export default function DemoCallout() {
             </div>
 
             <Link
-                href="/demo"
+                href={BOOK_DEMO_HREF}
                 className="bg-[#0557eb] hover:bg-[#0441b3] text-white font-medium py-3.5 px-8 rounded-lg transition-colors whitespace-nowrap text-[16px]"
             >
                 Book a Demo

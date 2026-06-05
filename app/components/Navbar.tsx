@@ -212,7 +212,7 @@ export default function Navbar() {
                                     </p>
 
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-1.5">
-                                        <div className="flex items-start gap-3.5 p-3.5 rounded-2xl">
+                                        <Link href="/blog" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <FileText className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -220,8 +220,8 @@ export default function Navbar() {
                                                 <h4 className="text-[12.5px] font-medium text-gray-900 leading-tight">Blog</h4>
                                                 <p className="text-[10.5px] text-gray-400 mt-1 font-normal leading-tight">Read the latest news, guides and industry updates.</p>
                                             </div>
-                                        </div>
-                                        <div className="flex items-start gap-3.5 p-3.5 rounded-2xl">
+                                        </Link>
+                                        <Link href="/faq" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <ShieldCheck className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -229,7 +229,7 @@ export default function Navbar() {
                                                 <h4 className="text-[12.5px] font-medium text-gray-900 leading-tight">FAQ&apos;s</h4>
                                                 <p className="text-[10.5px] text-gray-400 mt-1 font-normal leading-tight">Find answers to common questions about our platform.</p>
                                             </div>
-                                        </div>
+                                        </Link>
                                         <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-gray-50/50 border border-dashed border-gray-200 opacity-60">
                                             <div className="mt-1 shrink-0">
                                                 <Clock className="w-4.5 h-4.5 text-gray-400" />
@@ -272,7 +272,7 @@ export default function Navbar() {
                                     </p>
 
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-1.5">
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
+                                        <Link href="/about-us" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <Users className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -282,7 +282,7 @@ export default function Navbar() {
                                             </div>
                                         </Link>
 
-                                        <Link href="#" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
+                                        <Link href="/contact-us" className="flex items-start gap-3.5 p-3.5 rounded-2xl hover:bg-blue-50/50 transition-all group/item" onClick={() => setActiveDropdown(null)}>
                                             <div className="mt-1 shrink-0">
                                                 <Phone className="w-4.5 h-4.5 text-[#2764a8]" />
                                             </div>
@@ -442,7 +442,7 @@ export default function Navbar() {
 
                             {isMobileHubOpen && (
                                 <div className="mt-2 flex flex-col gap-1 animate-in slide-in-from-top-2 duration-300">
-                                    <div className="flex items-start gap-4 p-3.5 rounded-xl">
+                                    <Link href="/blog" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-all" onClick={() => setIsMobileMenuOpen(false)}>
                                         <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
                                             <FileText className="w-5 h-5 text-[#2764a8]" />
                                         </div>
@@ -450,16 +450,16 @@ export default function Navbar() {
                                             <h4 className="text-[13.5px] font-bold text-gray-900 leading-tight">Blog</h4>
                                             <p className="text-[11.5px] text-gray-400 mt-1 font-normal leading-tight">Read the latest news, guides and industry updates.</p>
                                         </div>
-                                    </div>
-                                    <div className="flex items-start gap-4 p-3.5 rounded-xl">
+                                    </Link>
+                                    <Link href="/faq" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-all" onClick={() => setIsMobileMenuOpen(false)}>
                                         <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
                                             <ShieldCheck className="w-5 h-5 text-[#2764a8]" />
                                         </div>
                                         <div>
-                                            <h4 className="text-[13.5px] font-bold text-gray-900 leading-tight">FAQ's</h4>
+                                            <h4 className="text-[13.5px] font-bold text-gray-900 leading-tight">FAQ&apos;s</h4>
                                             <p className="text-[11.5px] text-gray-400 mt-1 font-normal leading-tight">Find answers to common questions about our platform.</p>
                                         </div>
-                                    </div>
+                                    </Link>
                                     <div className="flex items-start gap-4 p-3.5 rounded-xl bg-gray-50/50 border border-dashed border-gray-200 opacity-60">
                                         <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
                                             <Clock className="w-5 h-5 text-gray-400" />
@@ -488,7 +488,7 @@ export default function Navbar() {
 
                             {isMobileOrgOpen && (
                                 <div className="mt-2 flex flex-col gap-1 animate-in slide-in-from-top-2 duration-300">
-                                    <Link href="#" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
+                                    <Link href="/about-us" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
                                         <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
                                             <Users className="w-5 h-5 text-[#2764a8]" />
                                         </div>
@@ -497,7 +497,7 @@ export default function Navbar() {
                                             <p className="text-[11.5px] text-gray-400 mt-1 font-normal leading-tight">Sharkship is more than just a deliver...</p>
                                         </div>
                                     </Link>
-                                    <Link href="#" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
+                                    <Link href="/contact-us" className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-blue-50/50 transition-colors" onClick={() => { setIsMobileMenuOpen(false); setIsMobileOrgOpen(false); }}>
                                         <div className="p-2.5 bg-white shadow-sm border border-gray-100 rounded-lg shrink-0">
                                             <Phone className="w-5 h-5 text-[#2764a8]" />
                                         </div>

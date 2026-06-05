@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOK_DEMO_HREF } from "../../data/routes";
 import {
     ArrowRight,
     BellRing,
@@ -270,7 +271,7 @@ export default function Pricing() {
 
                         <div className="flex flex-col gap-3 sm:flex-row">
                             <Link
-                                href="/#contact"
+                                href={BOOK_DEMO_HREF}
                                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-[15px] font-semibold text-[#10345f] transition-transform hover:-translate-y-0.5"
                             >
                                 Talk to Sales
