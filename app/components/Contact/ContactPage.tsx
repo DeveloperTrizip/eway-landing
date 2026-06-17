@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   CONTACT_FORM_ID,
   scrollToContactForm,
@@ -29,8 +30,6 @@ import {
   CONTACT_WHY_CHOOSE,
   MONTHLY_EWB_OPTIONS,
 } from "../../data/contactPage";
-import AboutHeroMockup from "../About/AboutHeroMockup";
-import AboutCTAIllustration from "../About/AboutCTAIllustration";
 
 const WHY_ICONS = [FileText, Upload, BellRing, Radar, BarChart3, Headphones];
 
@@ -208,7 +207,15 @@ export default function ContactPage() {
               <p className="text-[15px] text-gray-500 leading-relaxed mb-8">
                 {CONTACT_FORM_COPY.subtext}
               </p>
-              <AboutHeroMockup />
+              <div className="relative w-full max-w-[560px] aspect-[4/3] rounded-2xl overflow-hidden border border-[#e8eef5] shadow-[0_20px_50px_rgba(39,100,168,0.12)]">
+                <Image
+                  src="/contatc_eWay Bill Operations.png"
+                  alt="E-Way Bill operations support"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             <div className="bg-white rounded-2xl border border-[#e8eef5] shadow-[0_4px_24px_rgba(39,100,168,0.08)] p-6 md:p-8">
@@ -475,7 +482,15 @@ export default function ContactPage() {
               }}
             />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <AboutCTAIllustration />
+              <div className="relative w-full max-w-[520px] aspect-[4/3] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-white/15 bg-white/5">
+                <Image
+                  src="/contatc_eWay Bill Operations.png"
+                  alt="Contact Sharkship eWayBill"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center lg:text-left">
                 <h2 className="text-[26px] md:text-[32px] font-extrabold text-white leading-tight mb-3">
                   {CONTACT_FINAL_CTA.heading}
