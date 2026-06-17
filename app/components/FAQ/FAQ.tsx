@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   BOOK_DEMO_HREF,
 } from "../../data/routes";
@@ -24,7 +25,6 @@ import {
   type FAQCategoryId,
 } from "../../data/faq";
 import FAQHeroIllustration from "./FAQHeroIllustration";
-import FAQDashboardPreview from "./FAQDashboardPreview";
 
 const CATEGORY_ICONS: Record<string, ReactNode> = {
   all: <LayoutGrid className="w-4 h-4" />,
@@ -293,7 +293,15 @@ export default function FAQ() {
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
-          <FAQDashboardPreview />
+          <div className="w-full max-w-[520px]">
+            <Image
+              src="/E-way bill FAQs CTA.png"
+              alt="Book a live demo"
+              width={1040}
+              height={780}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </section>
     </>
